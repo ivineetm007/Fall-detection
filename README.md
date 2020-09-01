@@ -18,4 +18,4 @@ These are the major libraries along with their verisons.
 3. opencv=4.2.0
 4. python=3.7.6
 
-We have used tf1.x for the tensorlfow1.x detection zoo model. The provided code consists of person tracking, data processing, model training and tetsing. The person tracking code must requires tf1.x. If you are using the pre-tracked boxes, you can run the other code with tf2.x as well.
+We have used tf1.x for the tensorlfow1.x detection zoo model. The provided code consists of person tracking, data processing, model training and tetsing. The person tracking code must requires tf1.x. If you are using the pre-tracked boxes, you can run the other code with tf2.x as well. Check the Readme file inside the mrfd for more details about pre-tracked boxes.
