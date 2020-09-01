@@ -5,7 +5,7 @@ Directory structure used to store files for training and testing of each network
 Thermal_track/<data_type>/<model-type>/<hyper-paramteres combination> where each folder will contain three or four folders- images,loss,models and testing.
 ```
 
-For Thermal ROI-3DCAE with hyperparamter &lambda<sub>S;</sub> = 0.1, the root foler path will be 
+For Thermal ROI-3DCAE with hyperparamter &lambda; <sub>S;</sub> = 0.1, the root foler path will be 
 ```
 Thermal_track/ROIframe/ROI_C3DAE-no_pool-BN_3DCNN-no_pool-BN/lambda_0.1
 ```
