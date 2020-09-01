@@ -2,5 +2,5 @@ This folder stores all the intermediate model weights, images, losses at every 1
 Directory structure for each network trainig and testing-
 Thermal_track/<data_type>/<model-type>/<hyper-paramterescombinations> where each folder will contain three or four folders- images,loss,models and testing.
 
-Download the pre-trained models for all the networks directly from
-https://drive.google.com/drive/folders/11sp75lDEkFolLoCivF0PLrMsh_lXD0ra?usp=sharing
+Pre-trained model weights can be found under google drive link. It is recommended to download the entire folder for the respective network as the provided code assumes the above mentioned directory structure.
+Drive link- https://drive.google.com/drive/folders/11sp75lDEkFolLoCivF0PLrMsh_lXD0ra?usp=sharing
