@@ -10,3 +10,12 @@ Recreate the conda environment using the provided ```environment.yml``` file
 ```
 conda env create -f environment.yml 
 ```
+#### Others
+These are the major libraries along with their verisons.
+
+1. keras=2.3.1
+2. tensorflow=1.14.0
+3. opencv=4.2.0
+4. python=3.7.6
+
+We have used tf1.x for the tensorlfow1.x detection zoo model. The provided code consists of person tracking, data processing, model training and tetsing. The person tracking code must requires tf1.x. If you are using the pre-tracked boxes, you can run the other code with tf2.x as well.
