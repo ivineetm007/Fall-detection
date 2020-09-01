@@ -7,4 +7,6 @@ In this work, we formulate fall detection as an anomaly detection within an adve
 ## Requirements
 #### Conda
 Recreate the conda environment using the provided ```environment.yml``` file
-``` conda env create -f environment.yml ```
+```
+conda env create -f environment.yml 
+```
