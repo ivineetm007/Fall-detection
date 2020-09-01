@@ -3,4 +3,4 @@ Directory structure for each network trainig and testing-
 Thermal_track/<data_type>/<model-type>/<hyper-paramterescombinations> where each folder will contain three or four folders- images,loss,models and testing.
 
 Download the pre-trained models for all the networks directly from
-https://drive.google.com/drive/folders/1vGexPvEVsf0NYRZarWtKrsgOfvB2pyrE?usp=sharing
+https://drive.google.com/drive/folders/11sp75lDEkFolLoCivF0PLrMsh_lXD0ra?usp=sharing
