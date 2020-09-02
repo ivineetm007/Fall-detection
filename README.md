@@ -9,9 +9,11 @@ We use an object detector along with Kalman filters to track the bounding box fo
 
 <figure class="image">
   <img src="samples/tracking.gif" alt="tracking gif" height="400">
-  <figcaption>Left- Tracking w/o Contour Box, Right- Tracking with Contour Box </figcaption>
+  <figcaption>Left- Tracking without Contour Box, Right- Tracking with Contour Box </figcaption>
 </figure>
+
 Dark Blue- Detection Box   Sky Blue- Tracker Prediction Box   Green - Contour Box (If Matched with other boxes)   Red - Otsu Contour (Not matched)
+
 ### Requirements
 #### Conda
 Recreate the conda environment using the provided ```environment.yml``` file
