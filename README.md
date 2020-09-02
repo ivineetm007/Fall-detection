@@ -6,12 +6,9 @@ In this work, we formulate fall detection as an anomaly detection within an adve
 ### Examples
 #### Person Tracking
 
-| ![Screenshot](samples/tracking.gif) | 
-|:--:| 
-|Dark Blue- Detect box  Sky Blue- Track box   Green- Otsu Contour(Matched)  Red- Otsu Contour(Not matched)|
-
 ![Screenshot](samples/tracking.gif)
-*Dark Blue- Detect box  Sky Blue- Track box   Green- Otsu Contour(Matched)  Red- Otsu Contour(Not matched)*
+
+
 ### Requirements
 #### Conda
 Recreate the conda environment using the provided ```environment.yml``` file
