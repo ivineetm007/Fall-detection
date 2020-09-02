@@ -15,8 +15,12 @@ Dark Blue- Detection Box   Sky Blue- Tracker Prediction Box   Green - Contour Bo
 <img src="samples/tracking.gif" height="400"/> 
 
 <figure class="image">
-  <img src="{{ samples/tracking.gif }}" alt="{{ tracking gif }}">
-  <figcaption>{{Dark Blue- Detection Box   Sky Blue- Tracker Prediction Box   Green - Contour Box (If Matched with other boxes)   Red - Otsu Contour (Not matched)}}</figcaption>
+  <img src="samples/tracking.gif" alt="tracking gif">
+  <figcaption>Dark Blue- Detection Box   Sky Blue- Tracker Prediction Box   Green - Contour Box (If Matched with other boxes)   Red - Otsu Contour (Not matched)</figcaption>
+</figure>
+<figure>
+  <img src="{{site.url}}/assets/image.jpg" alt="my alt text"/>
+  <figcaption>This is my caption text.</figcaption>
 </figure>
 ### Requirements
 #### Conda
