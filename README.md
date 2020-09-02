@@ -5,7 +5,7 @@ This repository contains the source code for the paper [Motion and Region Aware 
 In this work, we formulate fall detection as an anomaly detection within an adversarial framework using thermal imaging. Fall events are detected by using spatio-temporal autoencoders trained in an adversarial manner. A fall event is associated with the person and its interactions with nearby objects. We extract the region around the person by tracking the person in the video using a pre-trained object detector and also extract the optical flow in the region for motion-based discriminative learning. 
 ### Examples
 #### Person Tracking
-
+![Screenshot](samples/tracking.gif)
 
 ### Requirements
 #### Conda
