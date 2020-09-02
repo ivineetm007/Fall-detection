@@ -12,6 +12,8 @@ We use an object detector along with Kalman filters to track the bounding box fo
 Dark Blue- Detection Box   Sky Blue- Tracker Prediction Box   Green - Contour Box (If Matched with other boxes)   Red - Otsu Contour (Not matched)
 
 
+<img src="samples/tracking.gif" height="400"/> 
+
 ### Requirements
 #### Conda
 Recreate the conda environment using the provided ```environment.yml``` file
