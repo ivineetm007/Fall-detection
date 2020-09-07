@@ -313,6 +313,20 @@ def get_cross_window_stats(scores_mat):
     scores_final = np.array(scores_final)
     return scores_final
 
+def get_cross_window_frames(recons_seq,height,width,channel,win_length):
+    '''
+        Take mean of the reconstructed frames present in different windows corresponding to the actual frame
+    '''
+    seq_num=recons_seq.shape[0]+win_length-1
+    sum_frames=np.zeros((seq_num,height,width,channels),dtype='float')
+    count_frames=np.zeros((seq_num))
+    for i in range(recons_seq.shape[0]):
+        sum_frames[i:i+win_length]+=recons_seq[i]
+        count_frames[i:i+win_length]+=1
+    return sum_frames/count_frames
+
+
+
 def join_mean_std(AUROC_avg, AUROC_std):
     new_mat = np.zeros(AUROC_avg.shape, dtype = object)
     AUROC_avg = np.around(AUROC_avg, decimals = 2)

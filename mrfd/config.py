@@ -1,4 +1,4 @@
-root_drive = '/home/vidushi/Vineet/BTP/git_code/dataset'
+root_drive ='../dataset'
 track_root_folder='Thermal_track'
 root_folder='Thermal'
 label_csv_path=root_drive+'/'+root_folder+'/Labels.csv'

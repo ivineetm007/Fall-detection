@@ -1,4 +1,4 @@
-from .losses import ROI_mean_squared_error_loss,wind_ROI_mean_squared_error,ROI_diff_mse_joint_loss,ROI_diff_temporal_loss
+from .losses import ROI_mean_squared_error_loss,wind_ROI_mean_squared_error,ROI_diff_mse_joint_loss,ROI_diff_temporal_loss,wind_ROI_diff_temporal_loss
 from .util import agg_window,create_windowed_arr,save_multiple_graph,get_output,gather_auc_avg_per_tol,join_mean_std,create_diff_mask
 import matplotlib.pyplot as plt
 from keras.models import Sequential, Model
@@ -112,16 +112,16 @@ class Fusion_Diff_ROI_3DCAE_GAN3D(object):
             win_length=win_length-1
         # print('total.shape', 'num_windowed', 'output_shape', total.shape, num_windowed, output_shape)
         for vid_name in videos_dic.keys():
-            print('Video Name', vid_name)
+            # print('Video Name', vid_name)
             vid_windowed_list=[]
             sub_vid_list=videos_dic[vid_name][data_key]
             for sub_vid in sub_vid_list:
                 vid_windowed_list.append(create_windowed_arr(sub_vid, stride, win_length))
-            print("Number of sub videos: ",len(vid_windowed_list))
+            # print("Number of sub videos: ",len(vid_windowed_list))
             vid_windowed=np.concatenate(vid_windowed_list)
             total.append(vid_windowed)
         total=np.concatenate(total)
-        print("Windowed data shape:")
+        # print("Windowed data shape:")
         print(total.shape)
         return total
 
@@ -138,7 +138,7 @@ class Fusion_Diff_ROI_3DCAE_GAN3D(object):
 
 
         RE=wind_ROI_mean_squared_error(flow_masks,flow_data,recons_seq,win_length-1, img_height,img_width,channels)
-        print('RE.shape', RE.shape)
+
 
         RE_dict = {}
 
@@ -149,16 +149,18 @@ class Fusion_Diff_ROI_3DCAE_GAN3D(object):
             RE_dict[agg_type] = agg_window(RE, agg_type)
 
         return RE_dict, recons_seq
-    def get_T_S_RE_all_agg(self, thermal_data, thermal_masks):
+    def get_T_S_RE_all_agg(self, thermal_data, thermal_masks,diff_masks):
         """
             compute Reconstruction error of thermal frames i.e thermal spatial loss
         """
 
         img_width, img_height, win_length, channels,model = self.train_par.width, self.train_par.height ,self.train_par.win_length, self.train_par.thermal_channels, self.T_R
 
-        recons_seq = model.predict([thermal_data,thermal_masks]) #(samples-win_length+1, win_length, wd,ht,1)
+        recons_seq = model.predict([thermal_data,thermal_masks,diff_masks]) #(samples-win_length+1, win_length, wd,ht,1)
+        # print(recons_seq.shape)
 
         RE=wind_ROI_mean_squared_error(thermal_masks,thermal_data,recons_seq,win_length, img_height,img_width,channels)
+        # print('RE.shape', RE.shape)
 
         RE_dict = {}
 
@@ -177,10 +179,10 @@ class Fusion_Diff_ROI_3DCAE_GAN3D(object):
         img_width, img_height, win_length, channels,model = self.train_par.width, self.train_par.height ,self.train_par.win_length, self.train_par.thermal_channels, self.T_R
 
         recons_seq = model.predict([thermal_data,thermal_masks,diff_masks]) #(samples-win_length+1, win_length, wd,ht,1)
-        print(recons_seq.shape)
+        
 
         RE=wind_ROI_diff_temporal_loss(thermal_masks,diff_masks,thermal_data,recons_seq,win_length, img_height,img_width,channels)
-        print('RE.shape', RE.shape)
+
 
         RE_dict = {}
 
@@ -515,8 +517,8 @@ class Fusion_Diff_ROI_3DCAE_GAN3D(object):
             flow_data_windowed_list = [create_windowed_arr(test_data, stride, win_length-1) for test_data in flow_data_list]#create_windowed_arr function in data_management.py
 
             # creating flow mask data
-            flow_mask_windowed_list=[create_diff_mask(mask_windows) for mask_windows in thermal_mask_windowed_list]
-            flow_mask_windowed_list=[np.concatenate((mask_windowed,mask_windowed,mask_windowed),axis=-1) for mask_windowed in flow_mask_windowed_list]
+            diff_mask_windowed_list=[create_diff_mask(mask_windows) for mask_windows in thermal_mask_windowed_list]
+            flow_mask_windowed_list=[np.concatenate((mask_windowed,mask_windowed,mask_windowed),axis=-1) for mask_windowed in diff_mask_windowed_list]
             # Masking the flow data
             flow_data_masked_windowed_list=[(flow_data_windowed_list[i]*flow_mask_windowed_list[i])+flow_mask_windowed_list[i]-1 for i in range(len(flow_data_windowed_list))]
 

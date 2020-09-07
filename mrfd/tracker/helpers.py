@@ -74,7 +74,8 @@ def select_box(box,detect_box,debug=False):
         if debug:
             print("Otsu Box is bigger in area")
         return box
-    print("Detect/track Box is bigger in area")
+    if debug:
+        print("Detect/track Box is bigger in area")
     return detect_box
 
 def union_box(box1,box2):
@@ -85,7 +86,7 @@ def union_box(box1,box2):
 
 def detection_otsu(img,detect_box,threshold=0.5,draw=True,delta=0.25):
     box=largest_contour(img)
-    print(detect_box)
+    # print(detect_box)
     if len(detect_box)==0:
         if draw:
             draw_box(img,box,color=(0,0,255))
@@ -137,9 +138,9 @@ def tracker_otsu(img,track_box,threshold=0.5,draw=True,delta=0.35):
         height_o,width_o=find_dim(box)
         height_t,width_t=find_dim(track_box)
         if height_o<(1-delta)*height_t or width_o<(1-delta)*width_t:
-            print("--------------------------------------------------")
-            print("Tracking box no match contour box DIMENSION ")
-            print("--------------------------------------------------")
+            # print("--------------------------------------------------")
+            # print("Tracking box no match contour box DIMENSION ")
+            # print("--------------------------------------------------")
             if draw:
                 draw_box_label('Otsu NM',img,box,box_color=(0,0,255))
             return False,track_box
@@ -149,9 +150,9 @@ def tracker_otsu(img,track_box,threshold=0.5,draw=True,delta=0.35):
         return True,box
         # return track_box
     else:
-        print("--------------------------------------------------")
-        print("Tracking box no match contour box IOU ")
-        print("--------------------------------------------------")
+        # print("--------------------------------------------------")
+        # print("Tracking box no match contour box IOU ")
+        # print("--------------------------------------------------")
         if draw:
             draw_box_label('Otsu NM',img,box,box_color=(0,0,255))
         return False,track_box

@@ -75,8 +75,9 @@ else:
 #model training
 #-----------------
 #load Gan trainer
-GAN3D=Fusion_ROI_3DCAE_GAN3D(train_par=param,stride=stride)
+GAN3D=Fusion_Diff_ROI_3DCAE_GAN3D(train_par=param,stride=stride)
 GAN3D.initialize_model(T_Reconstructor=TR, F_Reconstructor=FR, Discriminator=D)
 GAN3D.test(test_videos=Fall_videos, score_type = 'T_R_S', epochs = epochs_trained,plot=True,tolerance_limit=8)
 GAN3D.test(test_videos=Fall_videos, score_type = 'F_R', epochs = epochs_trained,plot=False,tolerance_limit=8)
+GAN3D.test(test_videos=Fall_videos, score_type = 'T_R_T', epochs = epochs_trained,plot=False,tolerance_limit=8)
 GAN3D.test(test_videos=Fall_videos, score_type = 'R', epochs = epochs_trained,plot=False,tolerance_limit=8)

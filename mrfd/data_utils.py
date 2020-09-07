@@ -13,6 +13,7 @@ import csv
 import glob
 import tqdm
 import shutil
+import sys
 
 """
 box- [y_up, x_left, y_down, x_right]
@@ -138,34 +139,7 @@ def split_data_tracks(data,frame_numbers,win_length,gap=24):
 
 
 
-
-def create_img_data_set(fpath, data_shape,dset, process_list=None,ROI_array=None,sort = True):
-    '''
-    Loading and preprocessing of all images located at fpath as given input in process_list.
-
-    fpath
-    data_shape-expected data shape after resizing
-    dset
-    process_List- transformations list
-    ROI_array=None- Bounding box array
-    sort = True
-
-    '''
-    #Final imagfe dimensions
-    ht,wd,channels=data_shape[0],data_shape[1],data_shape[2]
-    print('gathering data at', fpath)
-    fpath = fpath.replace('\\', '/')
-    frames = glob.glob(fpath+'/*.jpg') + glob.glob(fpath+'/*.png')
-    numbers=[]
-    #sort frames
-    if sort == True:
-        frames,numbers = sort_frames(frames, dset)
-
-    if 'ROI_frame' in process_list:
-        if len(ROI_array)!=len(frames):
-            print("Number of ROI and tracked frames are not equal")
-            sys.exit(0)
-
+def preprocess_frames(frames,numbers,process_list,ht,wd,channels,ROI_array=None):
     data=[]
     for x,i in zip(frames, range(0,frames.__len__())):
         #print(x,i)
@@ -219,6 +193,33 @@ def create_img_data_set(fpath, data_shape,dset, process_list=None,ROI_array=None
 
     # print(numbers)
     return data,numbers,frames
+def create_img_data_set(fpath, data_shape,dset, process_list=None,ROI_array=None,sort = True):
+    '''
+    Loading and preprocessing of all images located at fpath as given input in process_list.
+
+    fpath
+    data_shape-expected data shape after resizing
+    dset
+    process_List- transformations list
+    ROI_array=None- Bounding box array
+    sort = True
+
+    '''
+    #Final imagfe dimensions
+    ht,wd,channels=data_shape[0],data_shape[1],data_shape[2]
+    print('gathering data at', fpath)
+    fpath = fpath.replace('\\', '/')
+    frames = glob.glob(fpath+'/*.jpg') + glob.glob(fpath+'/*.png')
+    numbers=[]
+    #sort frames
+    if sort == True:
+        frames,numbers = sort_frames(frames, dset)
+
+    if 'ROI_frame' in process_list:
+        if len(ROI_array)!=len(frames):
+            print("Number of ROI and tracked frames are not equal")
+            sys.exit(0)
+    return preprocess_frames(frames,numbers,process_list,ht,wd,channels,ROI_array)
 
 def create_ROI_mask(ROI_boxes,ROI_numbers,img_shape=(480,640,1),load_shape=(64,64,1),win_length=8,split_gap=10):
     '''

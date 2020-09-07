@@ -310,7 +310,7 @@ def load_flow_from_folder(vid_flow_dir):
 
 def save_flow_folder(vid_flow_list,vid_flow_dir):
     '''
-        save optical flow computed for scubvideos
+        save optical flow computed for subvideos
     '''
     os.makedirs(vid_flow_dir,exist_ok=True)
     num=len(vid_flow_list)

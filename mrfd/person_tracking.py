@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import glob
 import time
 from collections import deque
-from sklearn.utils.linear_assignment_ import linear_assignment
+
 
 import os
 # os.environ['CUDA_VISIBLE_DEVICES']='-1'
@@ -236,16 +236,36 @@ def pipeline_single_tracker(det,img,otsu_box,track,draw=False):
         print(final_box)
     return final_box,img
 
-"""
-Function to track and save the corner coordinates in csv
-input:
-    frames:- list of frames path in sorted order
-    numbers: the sorted numbes as mentioned in the image name
-    Output_path:
-    otsu_box:
-    visualize:
-"""
+def tracking_frames(detection_threshold,frames,numbers,otsu_box=True):
+    """
+        Function to track and return boxes
+    """
+    detector_ = detector.PersonDetector(threshold=float(detection_threshold),model_path=config.detector_model_path)
+    track=single_tracker()
+    total=len(frames)
+    frame_num=[]
+    boxes=[]
+    for i in tqdm.tqdm(range(total)):
+        frame=frames[i]
+        number=numbers[i]
+        img=cv2.imread(frame)
+
+        box,new_img = pipeline_single_tracker(detector_,img,otsu_box,track,draw=False)
+        if len(box)!=0:
+            frame_num.append(number)
+            boxes.append(box)
+    return boxes,frame_num
+
 def tracking_frames_to_csv(detector,frames,numbers,output_path,otsu_box=True,visualize=False):
+    """
+    Function to track and save the corner coordinates in csv
+    input:
+        frames:- list of frames path in sorted order
+        numbers: the sorted numbes as mentioned in the image name
+        Output_path: output csv path
+        otsu_box: True or False
+        visualize:  True or False
+    """
     track=single_tracker()
     filename=os.path.basename(output_path)
     output_csvname=os.path.join(output_path,filename+'.csv')
@@ -345,7 +365,7 @@ if __name__ == "__main__":
         print("-------------------------")
         visualize=True
         #Initialization of tracker and detector
-    detector = detector.PersonDetector(threshold=float(args.detection_threshold),model_path=config.detector_model_path)
+    detector_ = detector.PersonDetector(threshold=float(args.detection_threshold),model_path=config.detector_model_path)
 
     #Output video frame rate
     frame_rate=10.0
@@ -369,9 +389,9 @@ if __name__ == "__main__":
         frames = glob.glob(input_path+'/*.jpg') + glob.glob(input_path+'/*.png')
         frames,numbers = sort_frames(frames, dset)
         if output_type=='video':
-            tracking_frames_to_video(detector,frames,output_path,frame_rate,otsu_box,visualize)
+            tracking_frames_to_video(detector_,frames,output_path,frame_rate,otsu_box,visualize)
         elif output_type=='csv':
-            tracking_frames_to_csv(detector,frames,numbers,output_path,otsu_box,visualize)
+            tracking_frames_to_csv(detector_,frames,numbers,output_path,otsu_box,visualize)
         else:
             print("Invalid output_type argument")
             sys.exit()
