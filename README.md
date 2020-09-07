@@ -12,14 +12,16 @@ We use an object detector along with Kalman filters to track the bounding box fo
   <br>
     <em>Left- Tracking without Contour Box, Right- Tracking with Contour Box</em>
 </p>
+**Dark Blue**- Detection Box, **Sky Blue**- Tracker Prediction Box, **Green** - Contour Box (If Matched with other boxes), **Red** - Otsu Contour (Not matched) and **Yellow**- Final Box
+#### Fall detection
 <p align="center">
-  <img alt=alt="fall detection demo1 gif" src="samples/Fall7_mean.gif" height="300">
-  <img alt=alt="fall detection demo1 gif" src="samples/Fall35_mean.gif" height="300">
+  <img alt=alt="fall detection demo1 gif" src="samples/Fall7_mean.gif" height="600">
+  <img alt=alt="fall detection demo1 gif" src="samples/Fall35_mean.gif" height="600">
   <br>
     <em></em>
 </p>
 
-**Dark Blue**- Detection Box, **Sky Blue**- Tracker Prediction Box, **Green** - Contour Box (If Matched with other boxes), **Red** - Otsu Contour (Not matched) and **Yellow**- Final Box
+
 
 ### Installation
 #### Conda
