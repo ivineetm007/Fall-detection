@@ -6,6 +6,7 @@ Change the ```root_drive``` variable in config.py if you wish to change the loca
 
 ## Demo and Animation
 We have prepared a python notebook to create animations and illustrate all the proposed fall detection method's intermediate steps. See [demo.ipynb](demo.ipynb). 
+
 To run this file, you need to follow these steps:
 1. Download the and configure the path of object detection model as described in this [section](#object-detector)
 2. Download the [pre-trained](#saved-model-weights-and-other-files) weights or train the model and specify the path while running the notebook.
