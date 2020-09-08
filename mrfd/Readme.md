@@ -18,6 +18,7 @@ Download and place the model checkpoint files either from tensorflow model zoo o
 2. https://drive.google.com/drive/folders/1vGexPvEVsf0NYRZarWtKrsgOfvB2pyrE?usp=sharing
 
 If you use any other object detector model from the tensorflow detection [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md). Specify the checkpoint path in ```config.py``` by changing the value of ```detector_model_path```.
+
 Run the following command to track and save the coordinates of the tracked person in the .csv files. These files will be saved at ```<root_path>/Thermal_track/csv```
 ```
 python person_tracking.py
@@ -28,6 +29,8 @@ python person_tracking.py --help
 ```
 You can use ```python person_tracking.py --visualize True``` to see the images while tracking. It will open an opencv window and shows the frame being tracked along with various boxes. You can save these visualizations in videos by ```python person_tracking.py --output_type video```. These videos will be saved at ```<root_path>/Thermal_track/video```.
 
+We have provided the csv files containing the frame number and the box coordiantes for fair comparison with the approaches on TSF dataset in the future. Downlaod these files from the following google drive link:
+[https://drive.google.com/drive/folders/1BJLvY-z0UZxV2G1CuAWQjiPh0NvzrqlJ?usp=sharing](https://drive.google.com/drive/folders/1BJLvY-z0UZxV2G1CuAWQjiPh0NvzrqlJ?usp=sharing)
 
 ### Optical flow
 
