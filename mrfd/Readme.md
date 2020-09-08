@@ -37,7 +37,7 @@ We have provided the csv files containing the frame number and the box coordiant
 [https://drive.google.com/drive/folders/1BJLvY-z0UZxV2G1CuAWQjiPh0NvzrqlJ?usp=sharing](https://drive.google.com/drive/folders/1BJLvY-z0UZxV2G1CuAWQjiPh0NvzrqlJ?usp=sharing)
 
 ### Optical flow
-In this work, we have computed dense optical flow using Farneback’s algorithm from [opencv library](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_video/py_lucas_kanade/py_lucas_kanade.html). Optical flow is automatically computed and save in the [Optical_flow_h-64_w-64_win-8_bw-10](Optical_flow_h-64_w-64_win-8_bw-10) folder. 
+In this work, we have computed dense optical flow using Farneback’s algorithm from [opencv library](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_video/py_lucas_kanade/py_lucas_kanade.html). Optical flow is automatically computed, saved and loaded from the [Optical_flow_h-64_w-64_win-8_bw-10](Optical_flow_h-64_w-64_win-8_bw-10) folder while training and testing. 
 
 To save time, you can download and place the precomputed optical flow from the following google drive link and then store them in [Optical_flow_h-64_w-64_win-8_bw-10](Optical_flow_h-64_w-64_win-8_bw-10) folder.
 
