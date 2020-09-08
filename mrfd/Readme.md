@@ -1,8 +1,22 @@
+## Configuration 
+Download the TSF dataset and place the video frame folders at ```<root_path>/Thermal/frame/Fall/``` and ```<root_path>/Thermal/frame/NonFall/``` respectively. The labels file ```Labels.csv``` must be place at ```<root_path>/Thermal/```. 
 
-## Person tracking
+The ```<root_path>``` will contain all the thermal frames, tracked box CSV files, and videos after preprocessing along with TSF dataset. It is set in config.py as ```../dataset```. 
+Change the ```root_drive``` variable in config.py if you wish to change the location to save these files.
+
+## Demo and Animation
+We have prepared a python notebook for the demo of the proposed fall detection method. See [demo.ipynb](demo.ipynb). 
+
+Download the [pre-trained](#saved-model-weights-and-other-files) weights or train the model and specify the path while running the notebook.
+
+## Data Preprocessing
+### Person tracking
+
 ```
 python person_tracking.py
 ```
+### Optical flow
+
 ## Training and Testing
 
 #### Previous SOTA model
@@ -65,3 +79,6 @@ python Fusion-ROI-3DCAE_test.py --lambda_T 0.1 --lambda_F 0.1 --epochstrained 29
 python Fusion-Diff-ROI-3DCAE_train.py --lambda_T_S 1 --lambda_T_T 1 --lambda_F 1
 python Fusion-ROI-3DCAE_test.py --lambda_T 0.1 --lambda_F 0.1 --epochstrained 299
 ```
+
+## Saved model weights and other files
+
