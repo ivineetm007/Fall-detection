@@ -5,7 +5,9 @@ The ```<root_path>``` will contain all the thermal frames, tracked box CSV files
 Change the ```root_drive``` variable in config.py if you wish to change the location to save these files.
 
 ## Demo and Animation
-We have prepared a python notebook to create the animation by the proposed fall detection method. See [demo.ipynb](demo.ipynb). Download the [pre-trained](##Pre-trained-model-weights-and-other-files) weights to run the code.
+We have prepared a python notebook to create the animation by the proposed fall detection method. See [demo.ipynb](demo.ipynb). 
+
+Download the [pre-trained](##Pre-trained-model-weights-and-other-files) weights or train the model and specify the path while running the cell in the notebook.
 
 ## Data Preprocessing
 ### Person tracking
