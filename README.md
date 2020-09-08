@@ -15,15 +15,15 @@ We use an object detector along with Kalman filters to track the bounding box fo
 **Dark Blue**- Detection Box, **Sky Blue**- Tracker Prediction Box, **Green** - Contour Box (If Matched with other boxes), **Red** - Otsu Contour (Not matched) and **Yellow**- Final Box
 
 #### Fall detection
-
+Some of the examples of fall detection by our method are shown below. It can be seen that our method not only able to localize the person in the thermal image but also reconstructs only the region around the person, which makes it possible to use in the environment having different background artifacts.    
 <p align="center">
-  <img alt=alt="fall detection demo1 gif" src="samples/Fall7_mean.gif" height="500" width="500">
-  <img alt=alt="fall detection demo1 gif" src="samples/Fall35_mean.gif" height="500" width="500">
+  <img alt=alt="fall detection demo1 gif" src="samples/Fall7_mean.gif" height="450" width="450">
+  <img alt=alt="fall detection demo1 gif" src="samples/Fall35_mean.gif" height="450" width="450">
   <br>
     <em></em>
 </p>
 
-
+### Dataset
 
 ### Installation
 #### Conda
