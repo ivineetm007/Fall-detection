@@ -11,6 +11,7 @@ Download the [pre-trained](#saved-model-weights-and-other-files) weights or trai
 
 ## Data Preprocessing
 ### Person tracking
+##### Object Detector
 The code for kalman filtering and person detector are saved in ```tracker/tracker.py``` and ```tracker/detector.py``` respectively. In this work, we use the pre-trained rfcn_resnet101_coco model checkpoint from tensorflow detection model zoo. 
 
 Download and place the model checkpoint files either from tensorflow model zoo or the google drive in [rfcn_resnet101_coco_2018_01_28](rfcn_resnet101_coco_2018_01_28) folder-
@@ -18,7 +19,7 @@ Download and place the model checkpoint files either from tensorflow model zoo o
 2. https://drive.google.com/drive/folders/1vGexPvEVsf0NYRZarWtKrsgOfvB2pyrE?usp=sharing
 
 If you use any other object detector model from the tensorflow detection [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md). Specify the checkpoint path in ```config.py``` by changing the value of ```detector_model_path```.
-
+##### Tracking
 Run the following command to track and save the coordinates of the tracked person in the .csv files. These files will be saved at ```<root_path>/Thermal_track/csv```. You can download and use the [csv files](#tracked-files) provided in the google drive and place it the same location. These csv files are further used to perform experiments.
 ```
 python person_tracking.py
