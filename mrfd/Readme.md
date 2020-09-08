@@ -84,4 +84,4 @@ python Fusion-ROI-3DCAE_test.py --lambda_T 0.1 --lambda_F 0.1 --epochstrained 29
 We saved the model weights, loss lists in .npy format, losses plot, and reconstructed images at intermediate epochs( at every 10th epoch). You can download all these files from the following google drive link:
 [https://drive.google.com/drive/folders/1O83xGqtSsxxD5CVATMc8azJslzNblavs?usp=sharing](https://drive.google.com/drive/folders/1O83xGqtSsxxD5CVATMc8azJslzNblavs?usp=sharing)
 
-Download all the folders or the desired one in the same folder structure and place it in the (Thermal_track)[Thermal_track] folder.
+Download all the folders or the desired one in the same folder structure and place it in the [Thermal_track](Thermal_track) folder.
