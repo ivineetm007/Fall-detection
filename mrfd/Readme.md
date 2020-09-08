@@ -7,7 +7,7 @@ Change the ```root_drive``` variable in config.py if you wish to change the loca
 ## Demo and Animation
 We have prepared a python notebook for the demo of the proposed fall detection method. See [demo.ipynb](demo.ipynb). 
 
-Download the [pre-trained](##Pre-trained-model-weights-and-other-files) weights or train the model and specify the path while running the notebook.
+Download the [pre-trained](##saved-model-weights-and-other-files) weights or train the model and specify the path while running the notebook.
 
 ## Data Preprocessing
 ### Person tracking
@@ -80,5 +80,5 @@ python Fusion-Diff-ROI-3DCAE_train.py --lambda_T_S 1 --lambda_T_T 1 --lambda_F 1
 python Fusion-ROI-3DCAE_test.py --lambda_T 0.1 --lambda_F 0.1 --epochstrained 299
 ```
 
-## Pre-trained model weights and other files
+## Saved model weights and other files
 
