@@ -1,11 +1,11 @@
 ## Configuration 
-Download the data and place the video frame folders at ```<root_path>/Thermal/frame/Fall/``` and ```<root_path>/Thermal/frame/NonFall/``` respectively. The labels file ```Labels.csv``` must be place at ```<root_path>/Thermal/```. 
+Download the TSF dataset and place the video frame folders at ```<root_path>/Thermal/frame/Fall/``` and ```<root_path>/Thermal/frame/NonFall/``` respectively. The labels file ```Labels.csv``` must be place at ```<root_path>/Thermal/```. 
 
 The ```<root_path>``` will contain all the thermal frames, tracked box CSV files, and videos after preprocessing along with TSF dataset. It is set in config.py as ```../dataset```. 
 Change the ```root_drive``` variable in config.py if you wish to change the location to save these files.
 
 ## Demo and Animation
-We have prepared a python notebook for the animation of the fall detection See [demo.ipynb](demo.ipynb) 
+We have prepared a python notebook to create the animation by the proposed fall detection method. See [demo.ipynb](demo.ipynb). Download the [pre-trained](## Pre-trained model weights and other files) weights to run the code.
 
 ## Data Preprocessing
 ### Person tracking
