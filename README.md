@@ -28,7 +28,7 @@ Some of the examples of fall detection by our method are shown below. It can be 
 #### TSF (Thermal Simulated Fall)
 It contains 9 videos with normal Activities of Daily Living (ADL) and 35 thermal videos containing falls and other normal activities with a spatial resolution of 640x480. 
 
-Please contact Dr. Shehroz S. Khan at [shehroz.khan@uhn.ca](shehroz.khan@uhn.ca) for access to the dataset. Please specify your affiliation and why you need this data in your email. Download and follow the instructions in the [Readme](mrfd/Readme.md#configuration) file inside the [mrfd](mrfd) folder to perform experiments. 
+Please contact Dr. Shehroz S. Khan at [shehroz.khan@uhn.ca](shehroz.khan@uhn.ca) for access to the dataset. Please specify your affiliation and why you need this data in your email. Download and follow the instructions in the Readme file inside the [mrfd](mrfd) folder to perform experiments. 
 
 ### Installation
 #### Conda
