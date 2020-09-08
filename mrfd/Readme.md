@@ -5,7 +5,7 @@ The ```<root_path>``` will contain all the thermal frames, tracked box CSV files
 Change the ```root_drive``` variable in config.py if you wish to change the location to save these files.
 
 ## Demo and Animation
-We have prepared a python notebook to create animations and illustrate all the proposed fall detection method's intermediate steps. See [demo.ipynb](demo.ipynb). 
+We have prepared a python notebook to create animations and illustrate all the proposed fall detection method's intermediate steps. See [demo.ipynb](demo.ipynb). Some of the generated videos can be seen in [demo_samples](demo_samples) folder.
 
 To run this file, you need to follow these steps:
 1. Download the and configure the path of object detection model as described in this [section](#object-detector)
