@@ -46,7 +46,7 @@ python 3DCAE_train.py --datatype flow --lambda_ 0.1
 python 3DCAE_test.py --datatype flow --epochstrained 290 --lambda_ 0.1
 ```
 
-#### ROI-3DCAE model
+#### ROI-3DCAE
 
 ##### Thermal model
 ```
@@ -59,21 +59,21 @@ python ROI-3DCAE_train.py --datatype flow
 python ROI-3DCAE_test.py  --datatype flow --epochstrained 299 --lambda_ 0.1
 ```
 
-#### Diff-ROI-3DCAE model
+#### Diff-ROI-3DCAE 
 
 ```
 python diff-ROI-3DCAE_train.py --lambda_S 1 --lambda_T 1
 python diff-ROI-3DCAE_test.py --epochstrained 290 --lambda_S 1 --lambda_T 1
 ```
 
-#### Fusion-ROI-3DCAE model
+#### Fusion-ROI-3DCAE 
 
 ```
 python Fusion-ROI-3DCAE_train.py --lambda_T 0.1 --lambda_F 0.1
 python Fusion-ROI-3DCAE_test.py --lambda_T 0.1 --lambda_F 0.1 --epochstrained 299
 ```
 
-#### Fusion-Diff-ROI-3DCAE model
+#### Fusion-Diff-ROI-3DCAE 
 
 ```
 python Fusion-Diff-ROI-3DCAE_train.py --lambda_T_S 1 --lambda_T_T 1 --lambda_F 1
