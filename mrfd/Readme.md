@@ -5,16 +5,21 @@ The ```<root_path>``` will contain all the thermal frames, tracked box CSV files
 Change the ```root_drive``` variable in config.py if you wish to change the location to save these files.
 
 ## Demo and Animation
-We have prepared a python notebook for the demo of the proposed fall detection method. See [demo.ipynb](demo.ipynb). 
+We have prepared a python notebook to create animations and illustrate all the proposed fall detection method's intermediate steps. See [demo.ipynb](demo.ipynb). 
 
 Download the [pre-trained](#saved-model-weights-and-other-files) weights or train the model and specify the path while running the notebook.
 
 ## Data Preprocessing
 ### Person tracking
-
+Run the following command to track and save the coordinates of the tracked person in the .csv files. These files will be saved at ```<root_path>/Thermal_track/csv```
 ```
 python person_tracking.py
 ```
+Check the various option with the following command:
+```
+python person_tracking.py --help
+```
+You can use ```python person_tracking.py --visualize True``` to see the images while tracking. It will open an opencv window and shows the frame being tracked along with various boxes. You can save these visualizations in video by ```python person_tracking.py --output_type video```. These videos will be saved at ```<root_path>/Thermal_track/video```.
 ### Optical flow
 
 ## Training and Testing
