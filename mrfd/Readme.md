@@ -22,7 +22,7 @@ Download and place the model checkpoint files either from tensorflow model zoo o
 
 If you use any other object detector model from the tensorflow detection [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md). Specify the checkpoint path in ```config.py``` by changing the value of ```detector_model_path```.
 ##### Tracking
-Run the following command to track and save the coordinates of the tracked person in the .csv files. These files will be saved at ```<root_path>/Thermal_track/csv```. You can download the [csv files](#tracked-files) provided in the google drive and place it the same location. These csv files are further used to perform experiments.
+Run the following command to track and save the coordinates of the tracked person in the .csv files. These files will be saved at ```<root_path>/Thermal_track/csv```. You can download the [csv files](#tracked-files) provided in the google drive and place it at the same location. These csv files are further used to perform experiments.
 ```
 python person_tracking.py
 ```
