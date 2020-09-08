@@ -1,5 +1,6 @@
 ## Configuration 
 Download the data and place the video frame folders at ```<root_path>/Thermal/frame/Fall/``` and ```<root_path>/Thermal/frame/NonFall/``` respectively. The labels file ```Labels.csv``` must be place at ```<root_path>/Thermal/```. 
+
 The ```<root_path>``` will contain all the thermal frames, tracked box CSV files, and videos after preprocessing along with TSF dataset. It is set in config.py as ```../dataset```. 
 Change the ```root_drive``` variable in config.py if you wish to change the location to save these files.
 
