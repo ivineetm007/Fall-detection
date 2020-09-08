@@ -11,14 +11,13 @@ Download the [pre-trained](#saved-model-weights-and-other-files) weights or trai
 
 ## Data Preprocessing
 ### Person tracking
-The code for kalman filtering and person detector are saved in ```tracker/tracker.py``` and ```tracker/detector.py``` respectively. In this work, we use the rfcn_resnet101_coco model from tensorflow detection model zoo. 
+The code for kalman filtering and person detector are saved in ```tracker/tracker.py``` and ```tracker/detector.py``` respectively. In this work, we use the pre-trained rfcn_resnet101_coco model checkpoint from tensorflow detection model zoo. 
 
-Download and place the model checkpoint files either from tensorflow model zoo or the google drive in [rfcn_resnet101_coco_2018_01_28](rfcn_resnet101_coco_2018_01_28)-
+Download and place the model checkpoint files either from tensorflow model zoo or the google drive in [rfcn_resnet101_coco_2018_01_28](rfcn_resnet101_coco_2018_01_28) folder-
 1. https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md
 2. https://drive.google.com/drive/folders/1vGexPvEVsf0NYRZarWtKrsgOfvB2pyrE?usp=sharing
 
-#### Object Detector
-
+If you use any other object detector model from the tensorflow detection [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md). Specify the checkpoint path in ```config.py``` by changing the value of ```detector_model_path```.
 Run the following command to track and save the coordinates of the tracked person in the .csv files. These files will be saved at ```<root_path>/Thermal_track/csv```
 ```
 python person_tracking.py
@@ -28,6 +27,7 @@ Check the various option with the following command:
 python person_tracking.py --help
 ```
 You can use ```python person_tracking.py --visualize True``` to see the images while tracking. It will open an opencv window and shows the frame being tracked along with various boxes. You can save these visualizations in videos by ```python person_tracking.py --output_type video```. These videos will be saved at ```<root_path>/Thermal_track/video```.
+
 
 ### Optical flow
 
