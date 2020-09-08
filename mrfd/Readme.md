@@ -7,7 +7,7 @@ Change the ```root_drive``` variable in config.py if you wish to change the loca
 ## Demo and Animation
 We have prepared a python notebook for the demo of the proposed fall detection method. See [demo.ipynb](demo.ipynb). 
 
-Download the [pre-trained](##Pre-trained-model-weights-and-other-files) weights or train the model and specify the path while running the cell in the notebook.
+Download the [pre-trained](##Pre-trained-model-weights-and-other-files) weights or train the model and specify the path while running the notebook.
 
 ## Data Preprocessing
 ### Person tracking
