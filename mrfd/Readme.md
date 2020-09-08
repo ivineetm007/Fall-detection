@@ -33,7 +33,6 @@ You can use ```python person_tracking.py --visualize True``` to see the images w
 #### Tracked files
 
 We have provided the csv files containing the frame number and the box coordiantes for fair comparison with the approaches on TSF dataset in the future. Downlaod these files from the following google drive link:
-
 [https://drive.google.com/drive/folders/1BJLvY-z0UZxV2G1CuAWQjiPh0NvzrqlJ?usp=sharing](https://drive.google.com/drive/folders/1BJLvY-z0UZxV2G1CuAWQjiPh0NvzrqlJ?usp=sharing)
 
 ### Optical flow
